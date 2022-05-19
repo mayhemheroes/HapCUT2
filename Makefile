@@ -8,7 +8,7 @@ CFLAGS=-Wall -g -O3 -Wall -D_GNU_SOURCE
 B=build
 H=hairs-src
 X=hapcut2-src
-HTSLIB=htslib #/usr/common/src/htslib #path/to/htslib/
+HTSLIB=/htslib #/usr/common/src/htslib #path/to/htslib/
 T=test
 # below is the path to CUnit directory, change if need be
 CUNIT=/usr/include/CUnit
