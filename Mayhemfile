@@ -1,5 +1,5 @@
 project: rnshah9/hapcut2
-target: hapcut2
+target: extracthairs
 tests:
   - file://vcf.vcf
 
