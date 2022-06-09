@@ -4,5 +4,5 @@ testsuite:
   - file://vcf.vcf
 
 cmds:
-  - cmd: /repo/build/extractHAIRS --bam /repo/bam.bam --vcf /text.vcf --out out
+  - cmd: /repo/build/extractHAIRS --bam /repo/bam.bam --vcf /test.vcf --out out
     filepath: /test.vcf
