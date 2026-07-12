@@ -1,0 +1,15 @@
+project: hapcut2
+target: extracthairs
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/extracthairs/testsuite
+
+cmds:
+  # In-process libFuzzer harness over the extractHAIRS VCF parser (count_variants/read_variantfile/
+  # parse_variant) — the exact code path the old raw `--vcf @@` file CLI exercised. It replaces that
+  # CLI because halting ASan makes the raw tool abort on trivial input (upstream OOB reads), which is
+  # unfuzzable as a file-input target; the harness drives the identical VCF bytes with sancov feedback.
+  # See mayhem/fuzz_vcf.c. Target name kept as `extracthairs` to preserve Mayhem run history.
+  - cmd: /mayhem/extracthairs-fuzz
+    libfuzzer: true
